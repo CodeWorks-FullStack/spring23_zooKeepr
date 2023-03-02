@@ -79,10 +79,10 @@ function reviveAnimal(name) {
     console.log(name, 'revive animal');
     // prevents the context menu from opening
     window.event.preventDefault()
-    // find the animal that I'm trying to revive
-    // check to see if I have enough $$$ to revive AND that the animal is dead
-    // revive the animal
-    // pay the witchdoctor
+    // TODO find the animal that I'm trying to revive
+    // TODO check to see if I have enough $$$ to revive AND that the animal is dead
+    // TODO revive the animal
+    // TODO pay the witchdoctor
     let animal = animals.find(a => a.name == name)
     // console.log(animal);
     if (money >= 1000 && animal.status == '💀') {
@@ -103,7 +103,6 @@ function reviveAnimal(name) {
     } else if (animal.status != '💀') {
         window.alert("he's just sleeping")
     }
-    // TODO update
     updateAnimal(animal.name)
 }
 
@@ -119,19 +118,20 @@ function drawMoney() {
 function updateAnimal(name) {
     // TODO find the animal I want to update
     // TODO after finding, need to update its display
-    // console.log(name, 'animal update');
     let animal = animals.find(a => a.name == name)
-    // NOTE after finding the animal, also update its status
+    // TODO after finding the animal, also update its status
     updateStatus(animal)
     console.log(animal);
-    // grab the animal element by its id
-    let animalElem = document.getElementById(animal.name)
+    let animalElem = document.getElementById(animal.name) //grab the animal element by its id
+
     // NOTE query selector will return the first descendant 
     // NOTE we are specifically using query selector bc we will need this to run for ea. individual animal; prevents the need for handling unique id's
-    // after grabbing the 'parent' element, target its descendants w/ the query selector
-    let statsView = animalElem.querySelector('.stats')
+
+    let statsView = animalElem.querySelector('.stats') //target animal elem's descendants w/ the query selector
+
     // NOTE here is how we could use interpolation for unique id's
     // document.getElementById(`${animal.name}-stats`)
+
     statsView.innerText = `${animal.name} | ${animal.status} | ${animal.hunger}`
     console.log(statsView);
 
@@ -149,7 +149,7 @@ function updateAnimal(name) {
 // STUB chose to create a separate fn so I could keep my logic here, and my updating of the DOM separate
 // REVIEW here we passed in the entire animal object because we already found it in our updateAnimal fn
 function updateStatus(animal) {
-    // NOTE we took this logic out of our updateAnimal and refactored it into its own function
+    // ANCHOR we took this logic out of our updateAnimal and refactored it into its own function
     console.log('update status');
     if (animal.hunger > 50) {
         animal.status = '😊'
@@ -208,9 +208,9 @@ function getPaid() {
 //              ⬇️⬇️ provide a fn as an argument... this is the fn I want to run on the inteval, DO NOT INVOKE
 setInterval(breakdownCalories, 1000)
 //                         ⬆️⬆️ how often I want the interval to run
+setInterval(getPaid, 1000)
 
 // NOTE we are provided a 'callback' here as a set of instructions to be ran every so often
 // NOTE if we invoke the fn with (), the fn will run only one time
 
-setInterval(getPaid, 1000)
 
