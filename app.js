@@ -6,7 +6,7 @@ const animals = [
         emoji: '🦩',
         status: '😊',
         hunger: 100,
-        // 
+        // ANCHOR extra property for expanding gameplay; maybe I want to purchase new animals
         cost: 1000
     },
     {
@@ -32,6 +32,7 @@ const animals = [
         emoji: '🦒',
         status: '😊',
         hunger: 100,
+        // ANCHOR extra property for expanding gameplay; maybe I want to render animals differently based on their type, or maybe they do different things
         type: 'land'
     },
     {
@@ -39,6 +40,7 @@ const animals = [
         emoji: '🐧',
         status: '😊',
         hunger: 100,
+        // ANCHOR extra property for expanding gameplay; maybe I want to render animals differently based on their type, or maybe they do different things
         type: 'aquatic'
     },
 ]
