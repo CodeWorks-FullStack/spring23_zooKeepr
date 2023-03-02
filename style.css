@@ -1,0 +1,21 @@
+.pen {
+    border: 5px dashed black;
+}
+
+.pen>marquee {
+    min-height: 20vh;
+}
+
+.emoji {
+    user-select: none;
+    cursor: grab;
+    font-size: 30px;
+    /* NOTE values go x-offset, y-offset, and blur */
+    filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.3777));
+}
+
+.stats {
+    background-color: cadetblue;
+    user-select: none;
+    text-align: center;
+}
